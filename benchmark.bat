@@ -1,3 +1,5 @@
+chcp 65001
+
 call mvn clean package
 
 if not exist "docs" mkdir "docs"
