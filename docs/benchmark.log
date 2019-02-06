@@ -1,0 +1,73 @@
+# JMH version: 1.19
+# VM version: JDK 1.8.0_161, VM 25.161-b12
+# VM invoker: C:\Program Files\Java\jre1.8.0_161\bin\java.exe
+# VM options: -Xmx2256M -Xms1256M
+# Warmup: 3 iterations, 300 ms each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: de.jawb.jmh.benchmark.example.SimpleBenchmark.dec_all
+
+# Run progress: 0,00% complete, ETA 00:00:21
+# Fork: 1 of 1
+# Warmup Iteration   1: 32668,666 ops/s
+# Warmup Iteration   2: 37017,443 ops/s
+# Warmup Iteration   3: 30962,311 ops/s
+Iteration   1: 29734,533 ops/s
+Iteration   2: 31920,120 ops/s
+Iteration   3: 35600,286 ops/s
+Iteration   4: 33684,982 ops/s
+Iteration   5: 30210,047 ops/s
+Iteration   6: 33473,627 ops/s
+Iteration   7: 32415,664 ops/s
+Iteration   8: 28147,022 ops/s
+Iteration   9: 35305,010 ops/s
+Iteration  10: 30118,121 ops/s
+
+
+Result "de.jawb.jmh.benchmark.example.SimpleBenchmark.dec_all":
+  32060,941 ±(99.9%) 3763,181 ops/s [Average]
+  (min, avg, max) = (28147,022, 32060,941, 35600,286), stdev = 2489,112
+  CI (99.9%): [28297,760, 35824,123] (assumes normal distribution)
+
+
+# JMH version: 1.19
+# VM version: JDK 1.8.0_161, VM 25.161-b12
+# VM invoker: C:\Program Files\Java\jre1.8.0_161\bin\java.exe
+# VM options: -Xmx2256M -Xms1256M
+# Warmup: 3 iterations, 300 ms each
+# Measurement: 10 iterations, 1 s each
+# Timeout: 10 min per iteration
+# Threads: 1 thread, will synchronize iterations
+# Benchmark mode: Throughput, ops/time
+# Benchmark: de.jawb.jmh.benchmark.example.SimpleBenchmark.dec_half
+
+# Run progress: 50,00% complete, ETA 00:00:11
+# Fork: 1 of 1
+# Warmup Iteration   1: 25525,746 ops/s
+# Warmup Iteration   2: 23582,268 ops/s
+# Warmup Iteration   3: 20395,576 ops/s
+Iteration   1: 25576,267 ops/s
+Iteration   2: 23805,892 ops/s
+Iteration   3: 27352,998 ops/s
+Iteration   4: 25204,629 ops/s
+Iteration   5: 23651,811 ops/s
+Iteration   6: 26222,035 ops/s
+Iteration   7: 22666,595 ops/s
+Iteration   8: 24685,728 ops/s
+Iteration   9: 26089,711 ops/s
+Iteration  10: 21497,903 ops/s
+
+
+Result "de.jawb.jmh.benchmark.example.SimpleBenchmark.dec_half":
+  24675,357 ±(99.9%) 2694,577 ops/s [Average]
+  (min, avg, max) = (21497,903, 24675,357, 27352,998), stdev = 1782,296
+  CI (99.9%): [21980,780, 27369,934] (assumes normal distribution)
+
+
+# Run complete. Total time: 00:00:22
+
+Benchmark                  Mode  Cnt      Score      Error  Units
+SimpleBenchmark.dec_all   thrpt   10  32060,941 ± 3763,181  ops/s
+SimpleBenchmark.dec_half  thrpt   10  24675,357 ± 2694,577  ops/s
