@@ -18,7 +18,7 @@ import io.github.benas.randombeans.api.EnhancedRandom;
 public class PersonGenerator {
 
     public static void generate() throws Exception {
-        List<Person> persons = EnhancedRandom.randomListOf(1000, Person.class);
+        List<Person> persons = EnhancedRandom.randomListOf(100, Person.class);
         ObjectMapper m = new ObjectMapper();
         // m.enable(SerializationFeature.INDENT_OUTPUT);
 

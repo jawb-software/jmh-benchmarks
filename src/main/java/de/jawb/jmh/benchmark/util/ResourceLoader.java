@@ -1,6 +1,7 @@
 package de.jawb.jmh.benchmark.util;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 public class ResourceLoader {
@@ -8,6 +9,11 @@ public class ResourceLoader {
     public static String getContent(String fileName) {
         try {
             InputStream stream = PersonGenerator.class.getClassLoader().getResourceAsStream(fileName);
+
+            if(stream == null) {
+                throw new FileNotFoundException(fileName);
+            }
+
             ByteArrayOutputStream result = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
             int length;

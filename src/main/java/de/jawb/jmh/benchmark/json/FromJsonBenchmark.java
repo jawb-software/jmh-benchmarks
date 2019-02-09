@@ -12,11 +12,19 @@ import java.util.concurrent.TimeUnit;
 
 @State(Scope.Benchmark)
 @Fork(value = 1)
-@Warmup(iterations = 3, time = 500, timeUnit = TimeUnit.MILLISECONDS)
+@Warmup(iterations = 5, time = 500, timeUnit = TimeUnit.MILLISECONDS)
 @Measurement(iterations = 5, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
-public class BigListFromJsonBenchmark {
+public class FromJsonBenchmark {
 
-    private String personsAsJson = ResourceLoader.getContent("persons_10000.json"); // 2 MB
+    @Param({"1", "100", "1000", "10000"})
+    private String persons;
+
+    private String personsAsJson;
+
+    @Setup
+    public void setup() {
+        personsAsJson = ResourceLoader.getContent("persons_" + persons + ".json");
+    }
 
     @Benchmark
     public void fromJson_gson(Blackhole bh) {
