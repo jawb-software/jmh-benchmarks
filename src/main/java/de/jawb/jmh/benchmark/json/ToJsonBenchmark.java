@@ -13,10 +13,10 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Benchmark)
 @Fork(value = 1)
 @Warmup(iterations = 5, time = 500, timeUnit = TimeUnit.MILLISECONDS)
-@Measurement(iterations = 5, time = 2000, timeUnit = TimeUnit.MILLISECONDS)
+@Measurement(iterations = 5, time = 500, timeUnit = TimeUnit.MILLISECONDS)
 public class ToJsonBenchmark {
 
-    @Param({"1", "100", "1000", "10000"})
+    @Param({"10", "100", "1000", "10000", "100000"})
     private String       persons;
 
     private List<Person> personList;
